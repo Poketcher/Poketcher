@@ -16,4 +16,13 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DBContext\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Models\" />
+    <Folder Include="Profiles\" />
+    <Folder Include="Services\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
