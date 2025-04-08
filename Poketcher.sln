@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poketcher", "Poketcher\Poketcher.csproj", "{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A6802266-0B6C-47F9-9605-E059461D3A4F} = {A6802266-0B6C-47F9-9605-E059461D3A4F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poketcher.navigation", "Poketcher.navigation\Poketcher.navigation.csproj", "{A6802266-0B6C-47F9-9605-E059461D3A4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6802266-0B6C-47F9-9605-E059461D3A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6802266-0B6C-47F9-9605-E059461D3A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6802266-0B6C-47F9-9605-E059461D3A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6802266-0B6C-47F9-9605-E059461D3A4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
