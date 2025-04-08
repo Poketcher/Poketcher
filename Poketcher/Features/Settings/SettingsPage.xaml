@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Poketcher.Features.Settings.SettingsPage"
+             xmlns:views="clr-namespace:Poketcher.Features.Base"
+             xmlns:viewmodel ="clr-namespace:Poketcher.Features.Settings"
+             x:DataType="viewmodel:SettingsViewModel"
+             Title="SettingsPage">
+    <Grid RowDefinitions="50,50,50,50,*" RowSpacing="15">
+        <Border>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer />
+            </Border.GestureRecognizers>
+            <VerticalStackLayout>
+                <Label Text="Export Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
+            </VerticalStackLayout>
+        </Border>
+        <Border Grid.Row="1">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer/>
+            </Border.GestureRecognizers>
+            <VerticalStackLayout>
+                <Label Text="Import Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
+            </VerticalStackLayout>
+        </Border>
+        <Border Grid.Row="2">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer/>
+            </Border.GestureRecognizers>
+            <VerticalStackLayout>
+                <Label Text="Populate Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
+            </VerticalStackLayout>
+        </Border>
+        <Border Grid.Row="3">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer/>
+            </Border.GestureRecognizers>
+            <VerticalStackLayout>
+                <Label Text="Load Pokémon Data" HorizontalOptions="Center" VerticalOptions="End"/>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</views:BasePage>
