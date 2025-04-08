@@ -38,7 +38,7 @@ namespace Poketcher
 #endif
             var app = builder.Build();
 
-            CopyDatabaseIfNotExists("poketcher.db");
+            //CopyDatabaseIfNotExists("poketcher.db");
             CopyDatabaseIfNotExists("user.db");
 
             return app;
