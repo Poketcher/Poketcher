@@ -37,7 +37,23 @@ namespace Poketcher
             builder.Logging.AddDebug();
 #endif
             var app = builder.Build();
+
+            CopyDatabaseIfNotExists("poketcher.db");
+            CopyDatabaseIfNotExists("user.db");
+
             return app;
+        }
+        private static void CopyDatabaseIfNotExists(string dbName)
+        {
+            var destinationPath = Path.Combine(FileSystem.AppDataDirectory, dbName);
+
+            if (!File.Exists(destinationPath))
+            {
+                using var stream = File.OpenWrite(destinationPath);
+                var assembly = typeof(MauiProgram).Assembly;
+                using var resourceStream = assembly.GetManifestResourceStream($"Poketcher.Resources.Raw.{dbName}");
+                resourceStream?.CopyTo(stream);
+            }
         }
         private static MauiAppBuilder RegisterPageAndViewModel(this MauiAppBuilder builder)
         {
