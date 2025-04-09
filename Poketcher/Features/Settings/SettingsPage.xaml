@@ -6,69 +6,117 @@
              xmlns:viewmodel ="clr-namespace:Poketcher.Features.Settings"
              x:DataType="viewmodel:SettingsViewModel"
              Title="SettingsPage" >
-    <Grid RowDefinitions="50,50,50,50,*,*,*,*" RowSpacing="15">
-        <Border>
-            <Border.GestureRecognizers>
-                <TapGestureRecognizer />
-            </Border.GestureRecognizers>
-            <VerticalStackLayout>
-                <Label Text="Export Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
-            </VerticalStackLayout>
-        </Border>
-        <Border Grid.Row="1">
-            <Border.GestureRecognizers>
-                <TapGestureRecognizer/>
-            </Border.GestureRecognizers>
-            <VerticalStackLayout>
-                <Label Text="Import Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
-            </VerticalStackLayout>
-        </Border>
-        <Border Grid.Row="2">
-            <Border.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding AddTestPokemonsCommand}"/>
-            </Border.GestureRecognizers>
-            <VerticalStackLayout>
-                <Label Text="Populate Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
-            </VerticalStackLayout>
-        </Border>
-        <Border Grid.Row="3">
-            <Border.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding LoadPokemonDataCommand}"/>
-            </Border.GestureRecognizers>
-            <VerticalStackLayout>
-                <Label Text="Load Pokémon Data" HorizontalOptions="Center" VerticalOptions="End"/>
-            </VerticalStackLayout>
-        </Border>
-        
-        <Label Grid.Row="4" Text="Pokémon Catturati" FontAttributes="Bold" HorizontalOptions="Center" />
-        <CollectionView Grid.Row="5" ItemsSource="{Binding CaughtPokemons}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding PokemonNumber}" />
-                        <Label Text="{Binding Game}" />
-                        <Label Text="{Binding IsShiny}" />
-                        <Label Text="{Binding IsMale}" />
-                        <Label Text="{Binding IsCaught}" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
 
-        <Label Grid.Row="6" Text="Pokémon Non Catturati" FontAttributes="Bold" HorizontalOptions="Center" />
-        <CollectionView Grid.Row="7" ItemsSource="{Binding UncaughtPokemons}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding PokemonNumber}" />
-                        <Label Text="{Binding Game}" />
-                        <Label Text="{Binding IsShiny}" />
-                        <Label Text="{Binding IsMale}" />
-                        <Label Text="{Binding IsCaught}" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <!--<Grid RowDefinitions="50,50,50,50,auto" RowSpacing="20">
+            <Border>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ExportDatabaseCommand}"/>
+                </Border.GestureRecognizers>
+                <VerticalStackLayout>
+                    <Label Text="Export Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border Grid.Row="1">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ImportDatabaseCommand}"/>
+                </Border.GestureRecognizers>
+                <VerticalStackLayout>
+                    <Label Text="Import Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border Grid.Row="2">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddTestPokemonsCommand}"/>
+                </Border.GestureRecognizers>
+                <VerticalStackLayout>
+                    <Label Text="Populate Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border Grid.Row="3">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LoadPokemonDataCommand}"/>
+                </Border.GestureRecognizers>
+                <VerticalStackLayout>
+                    <Label Text="Load Pokémon Data" HorizontalOptions="Center" VerticalOptions="End"/>
+                </VerticalStackLayout>
+            </Border>
+            <VerticalStackLayout Grid.Row="4">
+                <Label Text="Pokémon Catturati" FontAttributes="Bold" HorizontalOptions="Center" />
+                <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+                <CollectionView ItemsSource="{Binding CaughtPokemons}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border HeightRequest="50" WidthRequest="300">
+                                <Label Text="{Binding PokemonNumber}"/>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-    </Grid>
+                <Label Text="Pokémon Non Catturati" FontAttributes="Bold" HorizontalOptions="Center" />
+                <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+                <CollectionView ItemsSource="{Binding UncaughtPokemons}" IsVisible="{Binding IsLoading, Converter={StaticResource InverseBooleanConverter}}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="0,4" HeightRequest="45">
+                                <Grid>
+                                    <Label Grid.Column="5" Text="{Binding PokemonNumber}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+        </Grid>-->
+#WIP
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" ColumnDefinitions="*, *, *" Padding="10">
+                    <Label Text="Numero" Grid.Column="0" VerticalOptions="Center"  HorizontalOptions="Center"/>
+                    <Label Text="Nome" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Label Text="Sprite" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" />
+                </Grid>
+
+                <CollectionView Grid.Row="1" ItemsSource="{Binding Pokemons}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="15" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border 
+                       WidthRequest="400"
+                       HeightRequest="68"
+                       Stroke="Transparent"
+                       Padding="15">
+                                <!--<Border.Background>
+                                    <LinearGradientBrush>
+                                        <GradientStop Color="{Binding TypeColorOne}" Offset="0.4" />
+                                        <GradientStop Color="{Binding TypeColorTwo}" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Border.Background>-->
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20" />
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Radius="6" Opacity="0.5" />
+                                </Border.Shadow>
+                                <Grid ColumnDefinitions="*, *, *" >
+                                    <Label Text="{Binding Number}" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Name}" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <Image Source="{Binding Sprite}" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
 </views:BasePage>

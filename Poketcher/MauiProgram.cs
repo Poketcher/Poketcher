@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Storage;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Poketcher.database.DBContext;
 using Poketcher.database.Profiles.User;
@@ -12,6 +11,7 @@ using Poketcher.database.Services.User.Int;
 using Poketcher.Features.Settings;
 using Poketcher.navigation.Navigation.Imp;
 using Poketcher.navigation.Navigation.Int;
+using Poketcher.Services;
 
 namespace Poketcher;
 
@@ -75,6 +75,7 @@ public static class MauiProgram
     {
         builder.Services.AddSingleton<INavigationService, NavigationService>();
         builder.Services.AddSingleton<IAlertService, AlertService>();
+        builder.Services.AddSingleton<UserDbService>();
         return builder;
     }
 
