@@ -15,8 +15,7 @@ namespace Poketcher.database.DBContext
             _dbPath = dbPath;
         }
 
-        public DbSet<OwnedPokemon> OwnedPokemon { get; set; }
-        public DbSet<WantedPokemon> WantedPokemon { get; set; }
+        public DbSet<UserPokemon> OwnedPokemon { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,14 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Poketcher.database.Entities.User
+﻿namespace Poketcher.database.Dtos.User
 {
-    public class OwnedPokemon
+    public class UserPokemonDto
     {
-        [Key]
         public int Id { get; set; }
         public int Number { get; set; }
         public int Generation { get; set; }
         public bool IsShiny { get; set; }
         public bool IsMale { get; set; }
+        public bool IsCaught { get; set; }
     }
 }
