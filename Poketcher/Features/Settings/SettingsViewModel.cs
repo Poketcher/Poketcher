@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows.Input;
 using CommunityToolkit.Maui.Storage;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -17,6 +16,21 @@ public partial class SettingsViewModel : BaseViewModel
     private readonly CancellationTokenSource _cancellationTokenSource = new();
 
     [ObservableProperty]
+    private int _pokemonNumber;
+
+    [ObservableProperty]
+    private int _game;
+
+    [ObservableProperty]
+    private bool _isShiny;
+
+    [ObservableProperty]
+    private bool _isMale;
+
+    [ObservableProperty]
+    private bool _isCaught;
+
+    [ObservableProperty]
     public ObservableCollection<UserPokemonDto> _caughtPokemons = new();
     [ObservableProperty]
     public ObservableCollection<UserPokemonDto> _uncaughtPokemons = new();
@@ -31,38 +45,29 @@ public partial class SettingsViewModel : BaseViewModel
     {
         _userPokemonService = userPokemonService;
         _fileSaver = fileSaver;
-
-        // Inizializza RelayCommand
-        AddPokemonsCommand = new RelayCommand(AddTestPokemons);
-        LoadPokemonDataCommand = new RelayCommand(async () => await LoadPokemonDataAsync());
     }
 
-    // RelayCommand per aggiungere 4 Pokémon (per test)
-    public ICommand AddPokemonsCommand { get; }
-
-    // RelayCommand per caricare Pokémon catturati e non catturati
-    public ICommand LoadPokemonDataCommand { get; }
-
-    // Metodo per aggiungere 4 Pokémon di esempio
-    private async void AddTestPokemons()
+    [RelayCommand]
+    private void AddTestPokemons()
     {
-        _userPokemonService.AddPokemon(new CreateUserPokemonDto { Number = 1, Generation = 1, IsShiny = false, IsMale = true, IsCaught = true });
-        _userPokemonService.AddPokemon(new CreateUserPokemonDto { Number = 4, Generation = 1, IsShiny = false, IsMale = false, IsCaught = true });
-        _userPokemonService.AddPokemon(new CreateUserPokemonDto { Number = 7, Generation = 1, IsShiny = true, IsMale = true, IsCaught = false });
-        _userPokemonService.AddPokemon(new CreateUserPokemonDto { Number = 25, Generation = 1, IsShiny = false, IsMale = true, IsCaught = false });
+        _userPokemonService.AddPokemon(new CreateUserPokemonDto { PokemonNumber = 1, Game = 1, IsShiny = false, IsMale = true, IsCaught = true });
+        _userPokemonService.AddPokemon(new CreateUserPokemonDto { PokemonNumber = 4, Game = 1, IsShiny = false, IsMale = false, IsCaught = true });
+        _userPokemonService.AddPokemon(new CreateUserPokemonDto { PokemonNumber = 7, Game = 1, IsShiny = true, IsMale = true, IsCaught = false });
+        _userPokemonService.AddPokemon(new CreateUserPokemonDto { PokemonNumber = 25, Game = 1, IsShiny = false, IsMale = true, IsCaught = false });
 
-        await Application.Current.MainPage.DisplayAlert("Pokémon Aggiunti", "4 Pokémon sono stati aggiunti per test!", "OK");
+        Application.Current.MainPage.DisplayAlert("Pokémon Aggiunti", "4 Pokémon sono stati aggiunti per test!", "OK");
     }
 
-    // Metodo per caricare Pokémon catturati e non catturati
+    [RelayCommand]
     private async Task LoadPokemonDataAsync()
     {
         try
         {
             UncaughtPokemons.Clear();
             CaughtPokemons.Clear();
+
             // Ottieni Pokémon catturati
-            var caught = (await _userPokemonService.PokemonCaughtAndUncaught(0,50,true)).ToList();
+            var caught = (await _userPokemonService.PokemonCaughtAndUncaught(0, 50, true)).ToList();
             var unCaught = (await _userPokemonService.PokemonCaughtAndUncaught(0, 50, false)).ToList();
 
             foreach (var pokemon in caught)

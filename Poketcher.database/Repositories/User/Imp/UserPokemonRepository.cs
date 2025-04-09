@@ -5,7 +5,7 @@ using Poketcher.database.Repositories.User.Int;
 
 namespace Poketcher.database.Repositories.User.Imp
 {
-    internal class UserPokemonRepository : Repository<UserPokemon>, IUserPokemonRepository
+    public class UserPokemonRepository : Repository<UserPokemon>, IUserPokemonRepository
     {
         public UserPokemonRepository(UserDbContext context) : base(context)
         {

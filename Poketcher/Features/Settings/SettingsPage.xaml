@@ -6,7 +6,7 @@
              xmlns:viewmodel ="clr-namespace:Poketcher.Features.Settings"
              x:DataType="viewmodel:SettingsViewModel"
              Title="SettingsPage" >
-    <Grid RowDefinitions="50,50,50,50,*" RowSpacing="15">
+    <Grid RowDefinitions="50,50,50,50,*,*,*,*" RowSpacing="15">
         <Border>
             <Border.GestureRecognizers>
                 <TapGestureRecognizer />
@@ -25,7 +25,7 @@
         </Border>
         <Border Grid.Row="2">
             <Border.GestureRecognizers>
-                <TapGestureRecognizer/>
+                <TapGestureRecognizer Command="{Binding AddTestPokemonsCommand}"/>
             </Border.GestureRecognizers>
             <VerticalStackLayout>
                 <Label Text="Populate Pokèmon" HorizontalOptions="Center" VerticalOptions="End"/>
@@ -33,11 +33,42 @@
         </Border>
         <Border Grid.Row="3">
             <Border.GestureRecognizers>
-                <TapGestureRecognizer/>
+                <TapGestureRecognizer Command="{Binding LoadPokemonDataCommand}"/>
             </Border.GestureRecognizers>
             <VerticalStackLayout>
                 <Label Text="Load Pokémon Data" HorizontalOptions="Center" VerticalOptions="End"/>
             </VerticalStackLayout>
         </Border>
+        
+        <Label Grid.Row="4" Text="Pokémon Catturati" FontAttributes="Bold" HorizontalOptions="Center" />
+        <CollectionView Grid.Row="5" ItemsSource="{Binding CaughtPokemons}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding PokemonNumber}" />
+                        <Label Text="{Binding Game}" />
+                        <Label Text="{Binding IsShiny}" />
+                        <Label Text="{Binding IsMale}" />
+                        <Label Text="{Binding IsCaught}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label Grid.Row="6" Text="Pokémon Non Catturati" FontAttributes="Bold" HorizontalOptions="Center" />
+        <CollectionView Grid.Row="7" ItemsSource="{Binding UncaughtPokemons}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding PokemonNumber}" />
+                        <Label Text="{Binding Game}" />
+                        <Label Text="{Binding IsShiny}" />
+                        <Label Text="{Binding IsMale}" />
+                        <Label Text="{Binding IsCaught}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
     </Grid>
 </views:BasePage>

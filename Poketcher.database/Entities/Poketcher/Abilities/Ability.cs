@@ -7,10 +7,12 @@ namespace Poketcher.database.Entities.Poketcher.Abilities
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
+        [Required]
+        public string Name { get; set; } = string.Empty;
         public bool IsMainSeries { get; set; }
 
+        [Required]
         public int GenerationId { get; set; }
-        public Generation Generation {  get; set; } 
+        public required Generation Generation {  get; set; } 
     }
 }

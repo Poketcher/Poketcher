@@ -9,10 +9,12 @@ namespace Poketcher.database.Entities.Poketcher.Abilities
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public int AbilityId { get; set; }
-        public Ability Ability { get; set; }
+        public required Ability Ability { get; set; }
 
+        [Required]
         public int VersionGroupId { get; set; }
-        public VersionGroup VersionGroup { get; set; }
+        public required VersionGroup VersionGroup { get; set; }
     }
 }

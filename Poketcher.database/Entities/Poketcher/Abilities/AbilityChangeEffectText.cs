@@ -8,12 +8,15 @@ namespace Poketcher.database.Entities.Poketcher.Abilities
     {
         [Key]
         public int Id { get; set; }
-        public string Effect {  get; set; }
+        [Required]
+        public string Effect {  get; set; } = string.Empty;
 
+        [Required]
         public int AbilityChangeId { get; set; }
-        public AbilityChange AbilityChange { get; set; }
+        public required AbilityChange AbilityChange { get; set; }
 
+        [Required]
         public int LanguageId { get; set; }
-        public Language Language { get; set; }
+        public required Language Language { get; set; }
     }
 }
