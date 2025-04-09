@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Poketcher.database.Entities.Poketcher.Generations;
 
 namespace Poketcher.database.Entities.Poketcher.Abilities
 {

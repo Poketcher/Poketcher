@@ -5,7 +5,7 @@
              xmlns:views="clr-namespace:Poketcher.Features.Base"
              xmlns:viewmodel ="clr-namespace:Poketcher.Features.Settings"
              x:DataType="viewmodel:SettingsViewModel"
-             Title="SettingsPage">
+             Title="SettingsPage" >
     <Grid RowDefinitions="50,50,50,50,*" RowSpacing="15">
         <Border>
             <Border.GestureRecognizers>

@@ -7,7 +7,7 @@ using Poketcher.database.Services.User.Int;
 
 namespace Poketcher.database.Services.User.Imp
 {
-    internal class UserPokemonService : IUserPokemonService
+    public class UserPokemonService : IUserPokemonService
     {
         private readonly IUserPokemonRepository _repository;
         private readonly IMapper _mapper;
