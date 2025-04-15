@@ -231,6 +231,7 @@ public partial class SettingsViewModel : BaseViewModel
         try
         {
             IsLoading = true;
+
             var caught = await _userPokemonService.PokemonCaughtAndUncaught(0, 50, true);
             var unCaught = await _userPokemonService.PokemonCaughtAndUncaught(0, 50, false);
 

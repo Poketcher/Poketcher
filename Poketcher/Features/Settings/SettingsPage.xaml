@@ -7,7 +7,7 @@
              x:DataType="viewmodel:SettingsViewModel"
              Title="SettingsPage" >
 
-        <!--<Grid RowDefinitions="50,50,50,50,auto" RowSpacing="20">
+        <Grid RowDefinitions="50,50,50,50,auto" RowSpacing="20">
             <Border>
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ExportDatabaseCommand}"/>
@@ -47,8 +47,14 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Border HeightRequest="50" WidthRequest="300">
-                                <Label Text="{Binding PokemonNumber}"/>
-                            </Border>
+                            <Grid ColumnDefinitions="*,*,*,*,*">
+                                <Label Text="{Binding PokemonNumber}" />
+                                <Label Grid.Column="1" Text="{Binding Game}" />
+                                <Label Grid.Column="2" Text="{Binding IsShiny}" />
+                                <Label Grid.Column="3" Text="{Binding IsMale}" />
+                                <Label Grid.Column="4" Text="{Binding IsCaught}" />
+                            </Grid>
+                        </Border>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
@@ -68,9 +74,8 @@
                 </CollectionView>
             </VerticalStackLayout>
 
-        </Grid>-->
-#WIP
-    <ScrollView>
+        </Grid>
+    <!--<ScrollView>
         <VerticalStackLayout>
             <Grid>
                 <Grid.RowDefinitions>
@@ -95,12 +100,12 @@
                        HeightRequest="68"
                        Stroke="Transparent"
                        Padding="15">
-                                <!--<Border.Background>
+                                --><!--<Border.Background>
                                     <LinearGradientBrush>
                                         <GradientStop Color="{Binding TypeColorOne}" Offset="0.4" />
                                         <GradientStop Color="{Binding TypeColorTwo}" Offset="1.0" />
                                     </LinearGradientBrush>
-                                </Border.Background>-->
+                                </Border.Background>--><!--
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="20" />
                                 </Border.StrokeShape>
@@ -118,5 +123,5 @@
                 </CollectionView>
             </Grid>
         </VerticalStackLayout>
-    </ScrollView>
+    </ScrollView>-->
 </views:BasePage>

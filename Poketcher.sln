@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113
+VisualStudioVersion = 17.13.35828.75 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poketcher", "Poketcher\Poketcher.csproj", "{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A6802266-0B6C-47F9-9605-E059461D3A4F} = {A6802266-0B6C-47F9-9605-E059461D3A4F}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poketcher", "Poketcher\Poketcher.csproj", "{13971A9B-A86A-48AE-B99E-32C732F3E6B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poketcher.navigation", "Poketcher.navigation\Poketcher.navigation.csproj", "{A6802266-0B6C-47F9-9605-E059461D3A4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poketcher.navigation", "Poketcher.navigation\Poketcher.navigation.csproj", "{E75C04A7-5ED8-47D0-8F99-8DFC73AF2B96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poketcher.database", "Poketcher.database\Poketcher.database.csproj", "{0732115A-ECD5-4E99-82E8-1B4D4B804599}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poketcher.database", "Poketcher.database\Poketcher.database.csproj", "{D7DB9D03-5B0C-4176-A8E2-60F57B12AA6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,21 +15,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C60A2B6-1CE5-44AF-AF17-A21F1D4BA1CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A6802266-0B6C-47F9-9605-E059461D3A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A6802266-0B6C-47F9-9605-E059461D3A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A6802266-0B6C-47F9-9605-E059461D3A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A6802266-0B6C-47F9-9605-E059461D3A4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0732115A-ECD5-4E99-82E8-1B4D4B804599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0732115A-ECD5-4E99-82E8-1B4D4B804599}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0732115A-ECD5-4E99-82E8-1B4D4B804599}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0732115A-ECD5-4E99-82E8-1B4D4B804599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13971A9B-A86A-48AE-B99E-32C732F3E6B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13971A9B-A86A-48AE-B99E-32C732F3E6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13971A9B-A86A-48AE-B99E-32C732F3E6B3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{13971A9B-A86A-48AE-B99E-32C732F3E6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13971A9B-A86A-48AE-B99E-32C732F3E6B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13971A9B-A86A-48AE-B99E-32C732F3E6B3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E75C04A7-5ED8-47D0-8F99-8DFC73AF2B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E75C04A7-5ED8-47D0-8F99-8DFC73AF2B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E75C04A7-5ED8-47D0-8F99-8DFC73AF2B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E75C04A7-5ED8-47D0-8F99-8DFC73AF2B96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7DB9D03-5B0C-4176-A8E2-60F57B12AA6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7DB9D03-5B0C-4176-A8E2-60F57B12AA6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7DB9D03-5B0C-4176-A8E2-60F57B12AA6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7DB9D03-5B0C-4176-A8E2-60F57B12AA6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EC7B3F9-1531-4359-A39A-81F9F24BA71C}
 	EndGlobalSection
 EndGlobal
